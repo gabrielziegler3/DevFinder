@@ -21,14 +21,14 @@
 </p>
 
 <p>
-  <strong>Peopleworking:</strong>
+  <strong>People Working:</strong>
   <%= @project.peopleWorking %>
 </p>
 
 <p>
-  <strong>Peopleneeded:</strong>
+  <strong>People Needed:</strong>
   <%= @project.peopleNeeded %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Edit', edit_project_path(@project), class: "btn btn-link" %> |
+<%= link_to 'Back', projects_path, class: "btn btn-link" %>

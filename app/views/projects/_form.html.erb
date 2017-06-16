@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :company %>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :skill %>
-    <%= f.text_field :skill %>
+    <%= f.text_field :skill, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :peopleWorking %>
-    <%= f.number_field :peopleWorking %>
+    <%= f.number_field :peopleWorking, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= f.label :peopleNeeded %>
-    <%= f.number_field :peopleNeeded %>
+    <%= f.number_field :peopleNeeded, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
