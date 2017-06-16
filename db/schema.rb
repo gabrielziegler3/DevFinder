@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614171718) do
+ActiveRecord::Schema.define(version: 20170616191819) do
 
-  create_table "listings", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
+    t.string   "company"
+    t.text     "description"
     t.string   "skill"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "peopleWorking"
+    t.integer  "peopleNeeded"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end
