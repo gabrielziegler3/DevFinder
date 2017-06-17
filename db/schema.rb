@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170616221543) do
 
-  create_table "listings", force: :cascade do |t|
-    t.string   "name"
-    t.string   "skill"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "company"
