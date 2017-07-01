@@ -12,7 +12,7 @@
                     <p><%= "Language: " + project.skill %></p>
                     <p><%= "Group Size: " + project.peopleWorking.to_s %></p>
                     <p><%= "Members Needed: " + project.peopleNeeded.to_s %></p>
-                    <p><%= "Project Owner: " + project.user.email %></p>
+                    <p><%= "Project Owner: " + project.user.name.to_s %></p>
                     <%= link_to 'Show', project, class: "btn btn-link" %>
                     <%= link_to 'Edit', edit_project_path(project), class: "btn btn-link" %>
                     <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
