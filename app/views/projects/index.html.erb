@@ -1,3 +1,5 @@
+<%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>
+<br><br>
 <div class ="center">
     <div class="row">
         <% @projects.each do |project| %>
@@ -10,6 +12,7 @@
                     <p><%= "Language: " + project.skill %></p>
                     <p><%= "Group Size: " + project.peopleWorking.to_s %></p>
                     <p><%= "Members Needed: " + project.peopleNeeded.to_s %></p>
+                    <p><%= "Project Owner: " + project.user.email %></p>
                     <%= link_to 'Show', project, class: "btn btn-link" %>
                     <%= link_to 'Edit', edit_project_path(project), class: "btn btn-link" %>
                     <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
@@ -22,7 +25,6 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path, class: "btn btn-link" %>
 
 <br><br><br>
 
