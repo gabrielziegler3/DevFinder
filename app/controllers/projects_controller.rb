@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
   # GET /projects
   # GET /projects.json
   def index
@@ -25,6 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.user_id = current_user.id
 
     respond_to do |format|
       if @project.save
@@ -70,5 +72,11 @@ class ProjectsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
       params.require(:project).permit(:name, :company, :description, :skill, :peopleWorking, :peopleNeeded, :image)
+    end
+
+    def check_user
+        if current_user != @project.user
+            redirect_to root_url, alert: "Sorry, this project belongs to someone else!"
+        end
     end
 end
