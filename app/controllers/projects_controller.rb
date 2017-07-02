@@ -1,11 +1,15 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:programmer, :new, :create, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :update, :destroy]
   # GET /projects
   # GET /projects.json
+def programmer
+  @projects = Project.where(user: current_user).order("created_at DESC")
+end
+
   def index
-    @projects = Project.all
+    @projects = Project.all.order("created_at DESC")
   end
 
   # GET /projects/1
