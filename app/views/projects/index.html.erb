@@ -1,7 +1,4 @@
-<% if user_signed_in? %>
-    <%= link_to 'New Project', new_project_path, class: "btn btn-primary" %>
-    <br><br>
-<% end %>
+
 <div class ="center">
     <div class="row">
         <% @projects.each do |project| %>
@@ -15,10 +12,7 @@
                     <p><%= "Group Size: " + project.peopleWorking.to_s %></p>
                     <p><%= "Members Needed: " + project.peopleNeeded.to_s %></p>
                     <p><%= "Project Owner: " + project.user.name.to_s %></p>
-                    <% if (user_signed_in?) && (current_user == project.user) %>
-                        <%= link_to 'Edit', edit_project_path(project), class: "btn btn-link" %>
-                        <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
-                    <% end %>
+
                 </div>
             </div>
         </div>

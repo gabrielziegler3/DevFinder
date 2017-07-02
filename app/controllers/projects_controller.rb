@@ -5,11 +5,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
 def programmer
-  @projects = Project.where(user: current_user)
+  @projects = Project.where(user: current_user).order("created_at DESC")
 end
 
   def index
-    @projects = Project.all
+    @projects = Project.all.order("created_at DESC")
   end
 
   # GET /projects/1
