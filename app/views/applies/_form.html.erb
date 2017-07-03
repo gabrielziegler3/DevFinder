@@ -1,0 +1,28 @@
+<%= form_for([@project, @apply]) do |f| %>
+  <% if apply.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(apply.errors.count, "error") %> prohibited this apply from being saved:</h4>
+
+      <ul>
+      <% apply.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :free_time %>
+    <%= f.number_field :free_time, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :skills %>
+    <%= f.text_field :skills, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Apply", class: "btn btn-success" %>
+  </div>
+<% end %>

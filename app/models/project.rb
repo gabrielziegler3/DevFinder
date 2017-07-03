@@ -8,4 +8,5 @@ class Project < ApplicationRecord
     validates :name, :skill, presence: true
 
     belongs_to :user
+    has_many :applies
 end
