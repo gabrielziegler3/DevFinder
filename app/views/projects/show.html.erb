@@ -15,7 +15,9 @@
         <p><%= "Description: " + @project.description %></p>
         <br>
         <div class= "center">
-            <%= link_to "Apply Now", new_project_apply_path(@project), class: "btn btn-primary" %>
+            <% if current_user != @project.user %>
+                <%= link_to "Apply Now", new_project_apply_path(@project), class: "btn btn-primary" %> 
+            <% end %>
         </div>
     </div>
 </div>

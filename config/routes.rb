@@ -3,7 +3,7 @@ Rails.application.routes.draw do
         collection do
             get 'search'
         end
-        resources :applies
+        resources :applies, only: [:new, :create]
     end
     devise_for :users
 
