@@ -1,10 +1,14 @@
 class AppliesController < ApplicationController
   before_action :set_apply, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # GET /applies
-  # GET /applies.json
-  def index
-    @applies = Apply.all
+
+
+  def employees
+      @applies = Apply.all.where(employer: current_user).order("created_at DESC")
+  end
+
+  def interested_projects
+      @applies = Apply.all.where(interested: current_user).order("created_at DESC")
   end
 
   # GET /applies/1
@@ -16,10 +20,6 @@ class AppliesController < ApplicationController
   def new
     @apply = Apply.new
     @project = Project.find(params[:project_id])
-  end
-
-  # GET /applies/1/edit
-  def edit
   end
 
   # POST /applies
@@ -40,30 +40,6 @@ class AppliesController < ApplicationController
         format.html { render :new }
         format.json { render json: @apply.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /applies/1
-  # PATCH/PUT /applies/1.json
-  def update
-    respond_to do |format|
-      if @apply.update(apply_params)
-        format.html { redirect_to @apply, notice: 'Apply was successfully updated.' }
-        format.json { render :show, status: :ok, location: @apply }
-      else
-        format.html { render :edit }
-        format.json { render json: @apply.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /applies/1
-  # DELETE /applies/1.json
-  def destroy
-    @apply.destroy
-    respond_to do |format|
-      format.html { redirect_to applies_url, notice: 'Apply was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
