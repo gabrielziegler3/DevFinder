@@ -3,8 +3,9 @@ Rails.application.routes.draw do
         collection do
             get 'search'
         end
+        resources :applies
     end
-  devise_for :users
+    devise_for :users
 
   get "pages/about"
   get "pages/contact"
