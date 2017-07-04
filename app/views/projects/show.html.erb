@@ -16,21 +16,15 @@
         <br>
         <div class= "center">
             <% if current_user != @project.user %>
-                <%= link_to "Apply Now", new_project_apply_path(@project), class: "btn btn-primary" %> 
+                <%= link_to "Apply Now", new_project_apply_path(@project), class: "btn btn-primary" %>
             <% end %>
         </div>
     </div>
 </div>
 
 
-<!-- <br><br><br><br> -->
-<iframe
-width="300"
-height="300"
-frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC7gtYar38cLwRz8RTuBQN_4od8biPmTvI
-&q= <%= @project.location.parameterize %>" allowfullscreen>
-</iframe>
+<!-- <br><br><br><br> --->
+
 
 <br><br><br>
 <% if current_user == @project.user %>
