@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="thumbnail">
-        <%= image_tag @project.image.url %>
+        <%= image_tag @project.image.url(:medium) %>
         </div>
     </div>
     <div class="col-md-6">
@@ -22,9 +22,13 @@
     </div>
 </div>
 
-
-<!-- <br><br><br><br> --->
-
+<iframe
+    width="300"
+    height="300"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC7gtYar38cLwRz8RTuBQN_4od8biPmTvI
+    &q= <%= @project.location.parameterize %>" allowfullscreen>
+</iframe>
 
 <br><br><br>
 <% if current_user == @project.user %>
