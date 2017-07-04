@@ -12,16 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170703192932) do
 
-  create_table "applieds", force: :cascade do |t|
-    t.string   "skill"
-    t.integer  "free_time"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "project_id"
-    t.integer  "employee_id"
-    t.integer  "employer_id"
-  end
-
   create_table "applies", force: :cascade do |t|
     t.integer  "free_time"
     t.string   "skills"
@@ -77,8 +67,14 @@ ActiveRecord::Schema.define(version: 20170703192932) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "firt_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.date     "birthday"
+    t.string   "college"
     t.string   "category"
     t.string   "name"
+    t.integer  "project_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
