@@ -16,6 +16,13 @@ Exercício de Programação 3 - Ruby on Rails
     busca de um projeto existente para participar.
 
 ----------------------------------------------------------------------------------------------------
+->Para o perfeito funcionamento do DevFinder necessita que faça o download do elasticsearch
+  nesse link terá o tutorial para o procedimento de download/instalação.
+  "https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04"
+
+->Para perfeito funcionamento do DevFiner necessita que o programador que ira executar o site
+  saiba que existe uma API do google para localização "mapa" que necessita de uma key caso o programador não
+  possua retire do código as seguintes linhas "app/views/projects/show.html.erb" da linha 25 a 31.
 
 -> Execuntando o DevFinder
 
@@ -30,7 +37,7 @@ Exercício de Programação 3 - Ruby on Rails
     passo 5 - "sudo -i service elasticsearch start".
     passo 6 - "curl -X GET 'http://localhost:9200'".
     passo 7 - Navague pelo site e use suas funcionalidades.
-    
+
 -----------------------------------------------------------------------------------------------------
 -> Funcionalidades
       Para usuários não cadastrados as funcionalidades são básicas, ele pode nos contatar clican-
