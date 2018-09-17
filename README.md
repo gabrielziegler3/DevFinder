@@ -6,6 +6,20 @@ Alunos: João Carlos Porto dos Reis - 14/0145486
 Nome do site: DevFinder
 Exercício de Programação 3 - Ruby on Rails
 
+## Docker
+
+`sudo docker-compose build`
+
+`sudo docker-compose up`
+
+if you get the db migrate error, run:
+
+`sudo docker-compose run web bash`
+
+`root$ rake db:migrate`
+
+`root$ rails s`
+
 ----------------------------------------------------------------------------------------------------
 
 -> Tema
